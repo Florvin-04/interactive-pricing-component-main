@@ -1,39 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Interactive pricing component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="app__title">
+      <div class="bg-image-contaner">
+        <h1 class="title">Simple, traffic-based pricing</h1>
+        <p class="sub-heading">Sign-up for our 30-day trial. <br class="sub-heading-break-line" />No credit card required.</p>
+      </div>
+    </header>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+    <main class="pricing__container">
+      <div class="status">
+        <p class="number-of-pageviews" page-views>100K Pageviews</p>
+        <p class="total-price" total-price>$16.00 <span class="monthly-yearly">/ month</span></p>
 
-  Pageviews
-  $ /month
+        <input class="slider" type="range" name="slider" id="slider" min="0" max="1000000" />
+        <div class="type-of-billng">
+          <p class="monthly">Monthly Billing</p>
+          <label class="toggle-price">
+            <input class="toggle-slide" type="checkbox" />
+            <span class="toggle-slider"></span>
+          </label>
+          <p class="yearly">
+            Yearly Billing <span class="percentage--discount">-25% <span>discount</span> </span>
+          </p>
+          <!-- <p class="percentage--discount">-25% <span>discount</span></p> -->
+        </div>
+      </div>
 
-  Monthly Billing
-  Yearly Billing 25% discount
+      <div class="benefits--container">
+        <div class="list-of-benefitts">
+          <ul class="list">
+            <li class="list-item">Unlimited websites</li>
+            <li class="list-item">100% data ownership</li>
+            <li class="list-item">Email reports</li>
+          </ul>
+        </div>
+        <button class="start-btn">Start my trial</button>
+      </div>
+    </main>
 
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer>
+      <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/Florvin-04/interactive-pricing-component-main.git">FLORVIN</a>.</div>
+    </footer>
+  </body>
 </html>

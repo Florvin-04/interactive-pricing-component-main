@@ -1,0 +1,404 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+
+/* https://andy-bell.co.uk/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: 100%;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --Primary-Slider-Bar: 174 77% 80%;
+  --Primary-Slider-BG: 174 86% 45%;
+  --Primary-Discount-BG: 14 92% 95%;
+  --Primary-Discount-Text: 15 100% 70%;
+  --Primary-CTA-Text: 226 100% 87%;
+
+  --Neutral-Pricing-BG: 0 0% 100%;
+  --Neutral-Main-BG: 230 100% 99%;
+  --Neutral-Empty-Slider-Bar: 224 65% 95%;
+  --Neutral-Toggle-BG: 223 50% 87%;
+  --Neutral-Text: 225 20% 60%;
+  --Neutral-CTA-BG: 227 35% 25%;
+  /* color: #ff0000; */
+
+  /* padding for main */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 0.9375rem;
+  overflow: hidden;
+}
+
+.app__title {
+  background-color: hsl(var(--Neutral-Main-BG));
+  background-image: url(./images/bg-pattern.svg);
+  background-repeat: no-repeat, no-repeat;
+  /* background-position: cente; */
+  text-align: center;
+  height: 50vh;
+  border-bottom-left-radius: 200px;
+}
+
+.bg-image-contaner {
+  background-image: url(./images/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* outline: 1px solid red; */
+  padding: 3rem;
+}
+
+.title {
+  color: hsl(var(--Neutral-CTA-BG));
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+.sub-heading {
+  color: hsl(var(--Neutral-Text));
+  font-size: 0.9rem;
+}
+
+/* main section */
+
+.pricing__container {
+  position: relative;
+  top: -11.25rem;
+  background-color: white;
+  /* outline: 1px solid red; */
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 0.5rem;
+
+  width: min(90%, 600px);
+  /* max-width: ; */
+  margin-inline: auto;
+  text-align: center;
+}
+
+.status {
+  position: relative;
+  display: grid;
+  gap: 2.2em;
+  padding: 3em 1.5em;
+}
+
+.number-of-pageviews {
+  color: hsl(var(--Neutral-Text));
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+.total-price {
+  /* position: absolute; */
+  grid-row: 3;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: hsl(var(--Neutral-CTA-BG));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* outline: 1px solid red; */
+}
+
+.monthly-yearly {
+  font-size: 1rem;
+  color: hsl(var(--Neutral-Text));
+  font-weight: 600;
+  margin-left: 0.5em;
+}
+
+.monthly,
+.yearly {
+  font-size: 0.8rem;
+  position: relative;
+}
+
+.slider {
+  /* margin-top: 2.5rem; */
+  background-color: hsl(var(--Neutral-Empty-Slider-Bar));
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 2rem;
+}
+
+.slider::-moz-range-progress {
+  background-color: hsl(var(--Primary-Slider-Bar));
+  height: 100%;
+  border-radius: inherit;
+}
+
+.slider::-moz-range-thumb {
+  --cicle-size: 2.8rem;
+  background-color: hsl(var(--Primary-Slider-BG));
+  height: var(--cicle-size);
+  width: var(--cicle-size);
+  border-radius: 50%;
+  background-image: url(./images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  cursor: grab;
+  box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+}
+
+.toggle-price {
+  --toggle-height: 1.5rem;
+  position: relative;
+  display: inline-block;
+  width: 3.5rem;
+  height: var(--toggle-height);
+
+  border-radius: 100px;
+}
+
+.type-of-billng {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: hsl(var(--Neutral-Text));
+}
+
+.toggle-price input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: hsl(var(--Neutral-Toggle-BG));
+  border-radius: inherit;
+  transition: background-color 0.4s;
+}
+
+.toggle-slider:hover {
+  background-color: hsl(var(--Primary-Slider-BG) / 0.5);
+}
+
+.toggle-slider::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  aspect-ratio: 1 / 1;
+  width: calc(var(--toggle-height) - 0.4rem);
+  border-radius: 50%;
+
+  top: 50.1%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  transition: left 0.4s;
+}
+
+.toggle-slide:checked + .toggle-slider:after {
+  left: 75%;
+}
+
+.toggle-slide:checked + .toggle-slider {
+  background-color: hsl(var(--Primary-Slider-BG));
+}
+
+.percentage--discount {
+  position: absolute;
+  right: -45px;
+  transform: translateY(20%);
+  font-size: 0.8em;
+  color: hsl(var(--Primary-Discount-Text));
+  background-color: hsl(var(--Primary-Discount-BG));
+  border-radius: 100px;
+  padding: 0.1em 0.7em;
+}
+
+.percentage--discount > span {
+  display: none;
+}
+
+.benefits--container {
+  border-top: 1px solid hsl(var(--Neutral-Text) / 0.5);
+  color: hsl(var(--Neutral-Text));
+  font-size: 0.9rem;
+
+  padding-block: 2em;
+}
+
+.list > * + * {
+  margin-top: 0.5em;
+}
+
+.list-item::before {
+  content: url(./images/icon-check.svg);
+  margin-right: 0.9em;
+}
+
+.start-btn {
+  margin-top: 2em;
+  color: hsl(var(--Primary-CTA-Text));
+  background-color: hsl(var(--Neutral-CTA-BG));
+  border: none;
+  border-radius: 100px;
+  padding: 0.5em 3em;
+}
+
+/* main section end */
+
+footer {
+  position: relative;
+  bottom: 10rem;
+}
+
+/* 600px */
+@media (min-width: 37.5em) {
+  body {
+    /* background-color: red; */
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sub-heading-break-line {
+    display: none;
+  }
+
+  .status {
+    gap: 4em;
+    padding-inline: 3em;
+  }
+
+  .total-price {
+    /* position: absolute; */
+    grid-row: 1;
+    /* align-self: center; */
+    justify-self: self-end;
+  }
+
+  .number-of-pageviews {
+    grid-row: 1;
+    align-self: center;
+    justify-self: self-start;
+  }
+  .slider,
+  .type-of-billng {
+    grid-column: span 2;
+  }
+  .percentage--discount {
+    right: -5.75rem;
+  }
+  .percentage--discount > span {
+    display: inline-block;
+  }
+
+  .benefits--container {
+    text-align: left;
+    padding-inline: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .start-btn {
+    margin-top: 0;
+    padding-block: 0.6em;
+  }
+}
